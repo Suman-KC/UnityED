@@ -5,7 +5,7 @@ import './App.css'
 import axios from 'axios'
 
 function App() {
-  const [users,setUsers] = useState(['a','n','c'])
+  const [users,setUsers] = useState([])
   const fetchUsers = async ()=>{
     const response = await axios.get('http://localhost:8000/users/')
     console.log(response)
@@ -14,7 +14,7 @@ function App() {
 
   useEffect(()=>{
     fetchUsers()
-  },[users])
+  },[])
   return (
     <>
       <h1>Hello world</h1>
